@@ -157,7 +157,7 @@
         /* Хедер */
         /* Хедер - полная высота экрана */
 header {
-    background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    background: url('.../images/background.jpg') center/cover no-repeat;
     color: white;
     min-height: 100vh;
     height: 100vh;
@@ -1063,5 +1063,6 @@ header {
             }
 
         }
+
 
 

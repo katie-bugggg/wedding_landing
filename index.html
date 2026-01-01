@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Катя и Андрей | Свадебная вечеринка</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Фиксированное меню -->
+    <nav class="fixed-menu">
+        <div class="container">
+            <a href="#header" class="logo">
+                <i class="fas fa-heart"></i>
+                <span>К & А</span>
+            </a>
+            
+            <div class="menu-links">
+                <a href="#where">Где</a>
+                <a href="#schedule">Программа</a>
+                <a href="#dresscode">Дресс-код</a>
+                <a href="#org">Оргмоменты</a>
+                <a href="#accommodation">Ночевка</a>
+                <a href="#map-section">Как добраться</a>
+                <a href="#form" class="menu-button">Я буду!</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Хедер -->
+    <header id="header">
+        <div class="container header-content">
+            <h1>Не пропусти самое жаркое событие этого лета</h1>
+            <p>Наша пара официально станет семьей</p>
+            
+            <div class="date-location-container">
+                <div class="date-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>13-14.06.2026</span>
+                </div>
+                <div class="location-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>пос. Ладыгино Калининградской обл.</span>
+                </div>
+            </div>
+            
+            <div class="polaroid-stack">
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Катя и Андрей">
+                </div>
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Катя и Андрей смеются">
+                </div>
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Катя и Андрей на природе">
+                </div>
+            </div>
+            
+            <a href="#where" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </header>
+
+    <!-- Блок 2: Где празднуем -->
+    <section id="where" class="container">
+        <h2>Где празднуем</h2>
+        <p class="location-info">Гостевой дом "Сосны, ели и залив" в пос. Ладыгино</p>
+        
+        <div class="gallery">
+            <div class="polaroid-item">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Гостевой дом">
+            </div>
+            <div class="polaroid-item">
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Территория гостевого дома">
+            </div>
+            <div class="polaroid-item">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Интерьер дома">
+            </div>
+            <div class="polaroid-item">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Вид на природу">
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="#map-section" class="btn">Как добраться</a>
+        </div>
+    </section>
+
+    <!-- Блок 3: Что вас ждет -->
+    <section id="schedule" style="background-color: rgba(216, 227, 216, 0.1);">
+        <div class="container">
+            <h2>Что вас ждет</h2>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">День 1 - 13.06</div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">16:00</div>
+                        <p>Сбор гостей, обнимашки, позирование в фотозоне</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">17:00</div>
+                        <p>Начало фуршета (налегаем на кулинарные изыски от шефа и активнее опустошаем бар)</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">18:00</div>
+                        <p>Развлекательная программа (обещаем, без конкурса "Карандаш в бутылку")</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">20:00</div>
+                        <p>Танцы (покажем класс и растрясем люля-кебабы)</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">22:00</div>
+                        <p>Закусон для выстоявших</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">00:00</div>
+                        <p>Завершение</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">День 2 - 14.06</div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">09:00</div>
+                        <p>Завтрак (самообслуживание, налегайте на все, что найдете в холодильнике)</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">10:00</div>
+                        <p>Свободное время</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">12:00</div>
+                        <p>Прогулка к заливу</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">14:00</div>
+                        <p>Барбекю</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">16:00</div>
+                        <p>Баня</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">17:00</div>
+                        <p>Бассейн</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">18:00</div>
+                        <p>Барбекю</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-time">20:00</div>
+                        <p>Завершение</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок 4: Дресс-код -->
+    <section id="dresscode" class="container">
+        <h2>Что по дресс-коду</h2>
+        
+        <p style="text-align: center; margin-bottom: 30px;">Мы подготовили цветовую палитру для вашего вдохновения:</p>
+        
+        <div class="color-palette">
+            <div class="color" title="Parchment"></div>
+            <div class="color" title="Sand"></div>
+            <div class="color" title="Olive"></div>
+            <div class="color" title="Sage"></div>
+            <div class="color" title="Forest Green"></div>
+            <div class="color" title="Dark Green"></div>
+        </div>
+        
+        <div class="dresscode-gallery">
+            <div class="dresscode-item">
+                <div class="polaroid-item">
+                    <img src="https://images.unsplash.com/photo-1499939667766-4afceb292d81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Платье для дамы">
+                </div>
+            </div>
+            <div class="dresscode-item">
+                <div class="polaroid-item">
+                    <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Костюм для мужчины">
+                </div>
+            </div>
+            <div class="dresscode-item">
+                <div class="polaroid-item">
+                    <img src="https://images.unsplash.com/photo-1585487000160-6eb9ce6b5a73?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Костюм для мужчины">
+                </div>
+            </div>
+            <div class="dresscode-item">
+                <div class="polaroid-item">
+                    <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Платье для дамы">
+                </div>
+            </div>
+        </div>
+        
+        <p class="dresscode-note">Обуйте удобную обувь, будет много танцев. Шпильки не советуем - будет газон</p>
+    </section>
+
+    <!-- Блок 5: Оргмоменты -->
+    <section id="org" style="background-color: rgba(216, 227, 216, 0.1);">
+        <div class="container">
+            <h2>Оргмоменты</h2>
+            
+            <div class="org-items">
+                <div class="org-item">
+                    <i class="fas fa-suitcase"></i>
+                    <h3>Что взять с собой?</h3>
+                    <p>Если остаётесь на ночь: не забудьте купальник и банные принадлежности! Также советуем взять удобную сменную обувь для прогулок по территории.</p>
+                </div>
+                
+                <div class="org-item">
+                    <i class="fas fa-car"></i>
+                    <h3>Парковка</h3>
+                    <p>Для гостей на автомобилях на территории гостевого дома есть парковка. Пожалуйста, отметьте в анкете, планируете ли вы приехать на машине.</p>
+                </div>
+                
+                <div class="org-item">
+                    <i class="fas fa-wine-bottle"></i>
+                    <h3>Цветы</h3>
+                    <p>Пожалуйста, не покупайте букеты — мы хотим, чтобы ваши руки были свободны для объятий и танцев. Если хочется нас порадовать, мы будем рады бутылочке игристого/пенного для нашего праздника.</p>
+                </div>
+                
+                <div class="org-item">
+                    <i class="fas fa-baby-carriage"></i>
+                    <h3>Дети</h3>
+                    <p>Наше торжество запланировано в формате взрослого вечера. Если вам не с кем оставить ребёнка — мы, конечно, ждём вас вместе! Просто дайте нам знать в анкете заранее.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок 6: Ночевка -->
+    <section id="accommodation" class="container">
+        <h2>Ночевка</h2>
+        
+        <div class="accommodation-info">
+            <p>Мы будем счастливы провести с вами не только вечер 13-го, но и день 14-го! Для тех, кто захочет остаться на ночь, мы организовали несколько вариантов размещения.</p>
+            
+            <p style="margin-top: 20px;"><strong>Основные спальные места в доме:</strong> У нас есть 17 комфортных мест в главном доме. Они будут распределяться по принципу «кто успел, тот и съел» — шутка! На самом деле, мы будем рады в первую очередь предложить их парам с маленькими детьми и тем, кому сложнее с импровизированным ночлегом.</p>
+            
+            <p style="margin-top: 20px;"><strong>Кемпинг на территории:</strong> Для самых душевных, романтичных и авантюрных гостей у нас есть отличная лужайка под звездами! Мы можем предоставить вам матрас, подушку и спальник, если вы заранее сообщите о такой потребности. А если у вас есть своя палатка или надувной матрас — смело берите их с собой!</p>
+            
+            <p style="margin-top: 20px; font-style: italic;">Пожалуйста, отнеситесь с пониманием к тому, что комфортных мест в доме ограниченное количество. Наша главная цель — чтобы каждый провел этот день максимально весело и безопасно, независимо от выбранного варианта.</p>
+        </div>
+    </section>
+
+    <!-- Блок 7: Форма подтверждения участия -->
+    <section id="form" style="background-color: rgba(216, 227, 216, 0.1);">
+        <div class="container">
+            <h2>Анкета гостя</h2>
+            
+            <div class="form-container">
+                <form id="guest-form">
+                    <div class="form-group">
+                        <label for="name">Вас зовут:*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests-count">Каким составом нагрянете?*</label>
+                        <select id="guests-count" name="guests-count" required>
+                            <option value="" disabled selected>Выберите количество</option>
+                            <option value="1">1 гость</option>
+                            <option value="2">2 гостя</option>
+                            <option value="3">3 гостя</option>
+                            <option value="4+">4+ гостей</option>
+                        </select>
+                    </div>
+                    
+                    <div id="additional-guests" style="display: none;">
+                        <!-- Дополнительные поля для имен гостей будут добавлены через JS -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="allergies">Аллергии / особенности питания</label>
+                        <textarea id="allergies" name="allergies" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Что будете пить? (можно выбрать несколько вариантов)</label>
+                        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px;">
+                            <label style="display: flex; align-items: center;">
+                                <input type="checkbox" name="drink" value="безалкогольное"> Безалкогольное
+                            </label>
+                            <label style="display: flex; align-items: center;">
+                                <input type="checkbox" name="drink" value="легкое алкогольное"> Легкое алкогольное
+                            </label>
+                            <label style="display: flex; align-items: center;">
+                                <input type="checkbox" name="drink" value="крепкое"> Крепкое
+                            </label>
+                            <label style="display: flex; align-items: center;">
+                                <input type="checkbox" name="drink" value="все, что нальют"> Все, что нальют
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="stay">Остаетесь на второй день?*</label>
+                        <select id="stay" name="stay" required>
+                            <option value="" disabled selected>Выберите вариант</option>
+                            <option value="Да, могу спать в палатке/на матрасе">Да, могу спать в палатке/на матрасе</option>
+                            <option value="Да, нужна койка-место">Да, нужна койка-место</option>
+                            <option value="Ночую дома, но приеду на следующий день">Ночую дома, но приеду на следующий день</option>
+                            <option value="Не остаюсь">Не остаюсь</option>
+                            <option value="Не смогу посетить мероприятие">Не смогу посетить мероприятие</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="car">Приедете на своем авто?</label>
+                        <select id="car" name="car">
+                            <option value="" selected>Выберите вариант</option>
+                            <option value="Да">Да</option>
+                            <option value="Нет">Нет</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="track">Под какой трек вы точно подорветесь на танцпол?</label>
+                        <input type="text" id="track" name="track">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Контактный телефон:*</label>
+                        <input type="tel" id="phone" name="phone" pattern="[\+]\d{1,3}\s?[\(]?\d{1,4}[\)]?\s?\d{1,4}[\s-]?\d{1,4}[\s-]?\d{1,4}" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn">Я буду!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок 9: Таймер с темным фоном -->
+    <section class="countdown">
+        <div class="container">
+            <h2>До дня, когда мы официально станем командой, осталось:</h2>
+            
+            <div class="timer">
+                <div class="timer-item">
+                    <div class="timer-value" id="days">000</div>
+                    <div class="timer-label">дней</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-value" id="hours">00</div>
+                    <div class="timer-label">часов</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-value" id="minutes">00</div>
+                    <div class="timer-label">минут</div>
+                </div>
+                <div class="timer-item">
+                    <div class="timer-value" id="seconds">00</div>
+                    <div class="timer-label">секунд</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок 8: Как добраться -->
+    <section id="map-section" class="container">
+        <h2>Как добраться</h2>
+        
+        <div class="contacts-container">
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Если заблудились</h3>
+                    <p>Свяжитесь с нами в Telegram</p>
+                    <div class="telegram-links">
+                        <a href="https://t.me/andrey_wedding" class="telegram-link" target="_blank">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="https://t.me/katya_wedding" class="telegram-link" target="_blank">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Чат гостей</h3>
+                    <p>Будет добавлен ближе к дате</p>
+                    <p><i class="fas fa-calendar-alt" style="font-size: 2rem; color: var(--accent-green); margin-top: 10px;"></i></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Адрес</h3>
+                    <p>Гостевой дом "Сосны, ели и залив"<br>пос. Ладыгино, Калининградская обл.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="map"></div>
+    </section>
+
+    <!-- Блок 10: Игра Memory -->
+    <section class="game-section container">
+        <h2>А пока можешь сыграть в игру!</h2>
+        
+        <div style="text-align: center; margin-bottom: 40px;">
+            <button class="btn toggle-game">Сыграть в Memory</button>
+        </div>
+        
+        <div class="game-container" id="game-container">
+            <div class="game-header">
+                <div>Ходов: <span id="moves">0</span></div>
+                <div>Время: <span id="game-timer">0</span> сек</div>
+                <div>Найдено пар: <span id="pairs">0</span>/18</div>
+            </div>
+            
+            <div class="memory-grid" id="memory-grid">
+                <!-- Игровое поле будет заполнено через JS -->
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="btn" id="restart-game">Начать заново</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <h2>Будем счастливы вас видеть!</h2>
+            <p style="font-size: 1.5rem; margin-top: 10px;">Катя и Андрей</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем скрипты -->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</body>
+</html>

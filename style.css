@@ -190,76 +190,61 @@ header {
     position: relative;
 }
 
-/* Обновленный CSS для фото в хедере с полароидным стилем */
-.photo-stack {
-    position: relative;
-    width: 100%;
-    height: 500px;
+/* Контейнер для стопки полароидов */
+.polaroid-stack {
+  position: absolute; /* Поместить справа от текста */
+  right: 5%; /* Отступ от правого края */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 500px;
 }
 
-.photo-item {
-    position: absolute;
-    overflow: hidden;
-    border-radius: 3px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    background-color: var(--polaroid-bg);
-    padding-bottom: 50px;
-    transition: transform 0.3s ease, z-index 0.3s;
+/* Общий стиль для каждого полароидного снимка */
+.polaroid-frame {
+  position: absolute;
+  background: white;
+  padding: 15px 15px 60px 15px; /* Большой отступ снизу для "поля" полароида */
+  border-radius: 2px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Мягкая серая тень */
+  transition: transform 0.3s ease;
 }
 
-.photo-item:hover {
-    transform: scale(1.05);
-    z-index: 10;
+/* Специфичное положение и поворот для каждого снимка в стопке */
+.polaroid-frame:nth-child(1) {
+  width: 220px;
+  transform: rotate(-6deg);
+  z-index: 3;
+  top: 10px;
+  right: 10px;
+}
+.polaroid-frame:nth-child(2) {
+  width: 240px;
+  transform: rotate(2deg);
+  z-index: 2; /* Средняя фотография */
+  top: 60px;
+  right: 0;
+}
+.polaroid-frame:nth-child(3) {
+  width: 210px;
+  transform: rotate(8deg);
+  z-index: 1;
+  top: 120px;
+  right: 20px;
 }
 
-.photo-item img {
-    width: 100%;
-    height: calc(100% - 50px);
-    object-fit: cover;
-    border-radius: 2px 2px 0 0;
+/* Стиль для изображения внутри рамки */
+.polaroid-frame img {
+  width: 100%;
+  height: 220px; /* Фиксированная высота для квадратного формата */
+  object-fit: cover; /* Обрезаем изображение по квадрату */
+  display: block;
 }
 
-/* Эффект полароидной рамки */
-.photo-item:before {
-    content: '';
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 5px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-}
-
-/* Первое фото - левее и выше */
-.photo-1 {
-    width: 220px;
-    height: 280px;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transform: rotate(-8deg);
-}
-
-/* Второе фото - по центру и больше */
-.photo-2 {
-    width: 240px;
-    height: 300px;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%) rotate(2deg);
-    z-index: 3;
-}
-
-/* Третье фото - правее и ниже */
-.photo-3 {
-    width: 210px;
-    height: 270px;
-    top: 80px;
-    left: calc(100% - 220px);
-    z-index: 2;
-    transform: rotate(10deg);
+/* Эффект при наведении */
+.polaroid-frame:hover {
+  transform: rotate(0deg) scale(1.03); /* "Распрямляем" и немного увеличиваем */
+  z-index: 10; /* Поднимаем поверх всех */
 }
 
 /* Обновленные медиазапросы для мобильных */
@@ -1063,6 +1048,7 @@ header {
             }
 
         }
+
 
 
 

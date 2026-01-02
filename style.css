@@ -193,7 +193,10 @@ header {
 
 /* Стиль полароидных фото */
 .polaroid-stack {
-    position: relative;
+    position: absolute;
+    right: 8%; /* Было 5% - увеличил отступ */
+    top: 50%;
+    transform: translateY(-50%);
     width: 350px;
     height: 400px;
 }
@@ -212,6 +215,18 @@ header {
     height: auto;
     display: block;
     border-radius: 2px;
+}
+
+.polaroid-frame {
+    position: absolute;
+    background: white;
+    padding: 15px 15px 60px 15px;
+    border-radius: 2px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.2), /* Основная тень */
+        inset 0 0 0 1px rgba(0, 0, 0, 0.05); /* Легкая внутренняя рамка */
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Четкая граница, чтобы не сливались */
 }
 
 .polaroid-caption {
@@ -1048,34 +1063,83 @@ header {
             .timer-value {
                 font-size: 1.8rem;
             }
-                    /* ДИАГНОСТИКА ФОНА ХЕДЕРА - временный код */
-header#header {
-    background: 
-        linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3)), /* Красный полупрозрачный слой для теста */
-        url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat !important;
-    border: 5px solid blue !important; /* Синяя рамка для видимости границ */
-    position: relative !important;
-}
-
-/* Покажем что перекрывает хедер */
-header#header::before {
-    content: 'DEBUG: Проверка перекрытия' !important;
-    position: absolute !important;
-    top: 10px !important;
-    left: 10px !important;
-    background: yellow !important;
-    color: black !important;
-    padding: 10px !important;
-    z-index: 1000 !important;
-    font-family: monospace !important;
-}
-
-/* Проверим элементы внутри */
-header#header * {
-    outline: 1px dotted rgba(0, 255, 0, 0.3) !important;
+            /* ДОБАВЬТЕ этот медиазапрос в конец CSS: */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 80px; /* Увеличил снизу для фото */
+        gap: 40px;
+        min-height: auto;
+        height: auto; /* Убрал фиксированную высоту */
+    }
+    
+    .header-text {
+        max-width: 100%;
+        padding-bottom: 0;
+    }
+    
+    .polaroid-stack {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 400px;
+        margin: 30px auto 0 auto !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .polaroid-frame {
+        position: relative !important;
+        width: 280px !important;
+        margin: 0 auto !important;
+        transform: none !important;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+    }
+    
+    .polaroid-frame:nth-child(1),
+    .polaroid-frame:nth-child(2),
+    .polaroid-frame:nth-child(3) {
+        position: relative !important;
+        width: 280px !important;
+        margin: 0 auto 25px auto !important;
+        transform: none !important;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+    }
+    
+    .header-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .header-text p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .date-location-container {
+        margin-bottom: 2rem;
+    }
+    
+    /* Убедимся, что следующий блок не перекрывается */
+    #where {
+        padding-top: 40px !important;
+        margin-top: 0 !important;
+    }
 }
 
         }
+
 
 
 

@@ -915,6 +915,7 @@ footer {
 
 footer .container > h2 {
     font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.5rem !important;
     font-weight: 600 !important;
     letter-spacing: 0.5px !important;
 }
@@ -987,4 +988,5 @@ footer .container > p {
     .contacts-grid { grid-template-columns: 1fr; }
     .memory-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
 

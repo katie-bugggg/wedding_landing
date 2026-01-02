@@ -913,10 +913,17 @@ footer {
     padding: 60px 0;
 }
 
-footer h2 {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 20px;
+footer .container > h2 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+}
+
+footer .container > p {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 2.5rem !important;
+    margin-top: 10px !important;
+    font-weight: 400 !important;
 }
 
 /* Адаптивность */
@@ -980,3 +987,4 @@ footer h2 {
     .contacts-grid { grid-template-columns: 1fr; }
     .memory-grid { grid-template-columns: repeat(3, 1fr); }
 }
+

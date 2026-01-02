@@ -201,113 +201,121 @@ header {
     height: 400px;
 }
 
+/* Вместо .polaroid-frame используйте .polaroid */
 .polaroid {
-    position: absolute;
-    background: white;
-    padding: 15px 15px 40px 15px;
-    box-shadow: var(--shadow-medium);
-    border-radius: 2px;
-    transition: transform 0.3s ease;
-}
-
-.polaroid img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 2px;
-}
-
-.polaroid-frame {
     position: absolute;
     background: white;
     padding: 15px 15px 60px 15px;
     border-radius: 2px;
     box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.2), /* Основная тень */
-        inset 0 0 0 1px rgba(0, 0, 0, 0.05); /* Легкая внутренняя рамка */
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Четкая граница, чтобы не сливались */
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.polaroid-caption {
-    text-align: center;
-    font-family: var(--font-handwriting);
-    font-size: 1.2rem;
-    color: var(--color-gray);
-    margin-top: 10px;
-}
-
+/* Для отдельных фото используйте .photo1, .photo2, .photo3 */
 .photo1 {
-    transform: rotate(-5deg);
+    width: 220px;
+    transform: rotate(-8deg);
     z-index: 3;
-    width: 280px;
+    top: 5px;
+    right: 30px;
 }
 
 .photo2 {
-    transform: rotate(2deg);
+    width: 240px;
+    transform: rotate(3deg);
     z-index: 2;
-    width: 260px;
-    top: 30px;
-    left: 40px;
+    top: 70px;
+    right: 10px;
 }
 
 .photo3 {
-    transform: rotate(8deg);
+    width: 210px;
+    transform: rotate(10deg);
     z-index: 1;
-    width: 240px;
-    top: 60px;
-    left: 70px;
+    top: 140px;
+    right: 40px;
 }
 
+/* Стиль для изображения внутри полароида */
+.polaroid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Стиль для подписи */
+.polaroid-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+}
+
+/* Эффект при наведении */
 .polaroid:hover {
-    transform: rotate(0deg) scale(1.05);
+    transform: rotate(0deg) scale(1.03);
     z-index: 10;
 }
 
 /* Обновленные медиазапросы для мобильных */
+/* 1. Планшеты (992px и меньше) - первая критичная точка */
 @media (max-width: 992px) {
-    .photo-stack {
-        height: 350px;
-        max-width: 500px;
-        margin: 0 auto;
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 60px; /* Место для фото снизу */
     }
     
-    .photo-1, .photo-2, .photo-3 {
+    .polaroid-stack {
         position: relative;
-        width: 200px !important;
-        height: 250px !important;
-        top: auto !important;
-        left: auto !important;
-        transform: none !important;
-        margin: 0 auto 30px !important;
-        display: block;
-    }
-}
-
-@media (max-width: 768px) {
-    .photo-stack {
+        margin: 40px auto 0;
         height: auto;
+        width: 100%;
+        max-width: 500px;
     }
     
-    .photo-item {
-        height: 230px !important;
-    }
-    
-    .photo-1, .photo-2, .photo-3 {
-        width: 180px !important;
-        height: 230px !important;
+    .polaroid {
+        position: relative !important;
+        margin: 0 auto 30px !important;
+        transform: none !important;
+        width: 280px !important;
     }
 }
 
-@media (max-width: 480px) {
-    .photo-item {
-        height: 200px !important;
+/* 2. Телефоны (768px и меньше) - оптимизация для мобильных */
+@media (max-width: 768px) {
+    .header-content {
+        padding-bottom: 40px;
     }
     
-    .photo-1, .photo-2, .photo-3 {
-        width: 160px !important;
-        height: 210px !important;
+    .polaroid {
+        width: 250px !important;
+        margin-bottom: 25px !important;
+    }
+    
+    .header-text h1 {
+        font-size: 2.3rem;
+    }
+}
+
+/* 3. Маленькие телефоны (480px и меньше) */
+@media (max-width: 480px) {
+    .polaroid {
+        width: 220px !important;
         margin-bottom: 20px !important;
+    }
+    
+    .header-text h1 {
+        font-size: 2rem;
     }
 }
 
@@ -1139,6 +1147,7 @@ header {
 }
 
         }
+
 
 
 
